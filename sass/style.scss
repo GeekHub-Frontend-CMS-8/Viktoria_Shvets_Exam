@@ -1,0 +1,680 @@
+/*!
+Theme Name: GH-Exam
+Theme URI: http://underscores.me/
+Author: Vika Shvets
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: gh-exam
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+GH-Exam is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+//My styles
+button:hover, button:active, button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.navi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  color: $primary;
+
+  &:hover {
+    transition: .3s;
+    color: $accent;
+  }
+
+  a:visited {
+    color: $primary;
+  }
+}
+
+.header {
+  position: fixed;
+  background-color: $secondary;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+}
+
+.model {
+  margin-left: 120px;
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
+  background-image: url("../img/blue-bg.png");
+  background-position: right center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.model-name {
+  color: $primary;
+  font-family: 'Open Sans';
+  font-size: 70px;
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+}
+
+.model-desc {
+  color: $primary;
+  font-family: "Nunito";
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.model-text {
+
+  height: 800px;
+  background-image: url("../img/model.png");
+  display: inline-flex;
+  justify-content: center;
+  flex-flow: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    justify-content: flex-end;
+  }
+}
+
+.model-i {
+  width: 110px;
+  height: 110px;
+  background-color: $secondary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-button {
+  border: none;
+  display: flex;
+  flex-flow: row;
+  width: 360px;
+  height: 110px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  padding-left: 20px;
+  background-color: $accent;
+  font-family: "Nunito";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: -200px;
+
+  &-contact {
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    margin-left: 0px;
+    display: inline-flex;
+    width: 260px;
+  }
+  @media (max-width: 1400px) {
+    margin-left: 0;
+  }
+
+  &:hover .model-i {
+    transition: .3s;
+    background-color: $primary;
+    color: $secondary;
+  }
+
+  &:hover {
+    transition: .3s;
+    background-color: #f1f1f1;
+    color: $primary;
+  }
+
+
+}
+
+.for-buton {
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.model-items {
+  padding-top: 10px;
+  margin-left: -50px;
+  @media (max-width: 767px) {
+    margin-left: 10px;
+  }
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+.tile-item {
+  min-height: 360px;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover .hover-item {
+    transition: .3s;
+    opacity: 1;
+  }
+}
+
+.hover-item {
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: .3s;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  text-align: center;
+}
+
+.tiles {
+  &-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: $secondary;
+    letter-spacing: 0.6px;
+  }
+
+  &-work {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    color: $secondary;
+    padding-bottom: 20px;
+  }
+
+  &-buttons {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      box-sizing: border-box;
+      width: 142px;
+      border: 1px solid transparent;
+      border-radius: 0;
+      background-color: $secondary;
+      color: #696970;
+      font-family: "Nunito", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      height: 40px;
+      text-transform: uppercase;
+
+      &:hover, &:active {
+        transition: .3s;
+        border-bottom: 1px solid $primary;
+        color: $primary;
+        outline: none;
+        cursor: pointer;
+
+      }
+    }
+
+  }
+
+  .explore-more {
+    width: 220px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #b4d3d3;
+    color: #ffffff;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.8px;
+    margin: 30px auto;
+    display: block;
+
+    &:hover {
+      transition: .3s;
+      background-color: $primary;
+    }
+
+  }
+}
+
+.latest-news {
+  padding: 50px 0;
+
+  h2 {
+    padding: 20px 0;
+    text-align: center;
+    color: $primary;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 79px;
+  }
+}
+
+.news {
+  a {
+    display: inline-flex;
+    flex-flow: row;
+
+    &:hover {
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &:hover h4 {
+      color: $accent;
+      transition: .3s;
+    }
+  }
+
+  &-desc {
+    padding-left: 10px;
+    padding-left: 30px;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+  &-header {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    color: $primary;
+  }
+
+  &-date {
+    color: #77777e;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+  }
+
+  &-photo {
+    width: 150px;
+    height: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.sign-up {
+  border: none;
+  outline: none;
+  background-color: $secondary;
+  border-left: 1px solid $accent;
+  color: $primary;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  height: 40px;
+
+  &:hover, &:active, &:focus {
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    background-color: $accent;
+  }
+}
+
+.footer-first {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.footer-second {
+  display: flex;
+  padding: 20px 0;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social {
+  @include inline-flex-around-center;
+  padding-left: 16px;
+
+  li {
+    display: inline-flex;
+  }
+
+  a {
+    @include inline-flex-around-center;
+    width: 30px;
+    height: 20px;
+  }
+
+  i {
+    display: inline-flex;
+    color: $primary;
+  }
+
+  &-bot {
+    padding-top: 20px;
+  }
+
+  &-footer {
+    padding-right: 8px;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    i {
+      display: inline-flex;
+    }
+
+    a:hover i {
+      transition: .3s;
+      color: $accent;
+    }
+  }
+
+  &-left {
+    z-index: 100;
+    padding: 0;
+    margin: -50px;
+    position: fixed;
+    left: 10px;
+    top: 100px;
+    @media (max-width: 767px) {
+      flex-flow: column;
+    }
+
+    li {
+      display: block;
+      margin: 30px 0;
+    }
+
+    a:hover i {
+      transition: .3s;
+      color: $accent;
+    }
+
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.copyright {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+main {
+  margin-top: 100px;
+}
+
+.left-part {
+  width: 40%;
+  background-image: url("../img/contacts-bg.png");
+  min-height: 600px;
+  align-items: flex-end;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+
+  &-text {
+    padding-top: 150px;
+
+    h1 {
+      padding-right: 10px;
+      padding-left: 40px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 80px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 2.02px;
+      @media (max-width: 1023px) {
+        padding-left: 10px;
+        font-size: 60px;
+      }
+
+    }
+
+    p {
+      padding-right: 10px;
+      padding-left: 40px;
+      @media (max-width: 1023px) {
+        padding-left: 10px;
+      }
+
+      font-family: "Nunito", sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #ffffff;
+      letter-spacing: 3.4px;
+    }
+  }
+}
+
+.right-part {
+  padding-top: 70px;
+  display: flex;
+  flex-flow: row;
+  width: 50%;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+
+  &-text {
+    width: 80%;
+  }
+
+  &-img {
+    width: 20%;
+  }
+
+}
+
+.part {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  @media (max-width: 1023px) {
+    flex-flow: column;
+  }
+}
+
+.contact-item {
+  padding-top: 50px;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+
+  i {
+    padding-right: 10px;
+  }
+
+  a, p {
+    color: #77777e;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &:hover i {
+    transition: .3s;
+    color: $accent;
+  }
+
+  &:hover p {
+    transition: .3s;
+    color: $primary;
+  }
+
+  &:hover a {
+    transition: .3s;
+    color: $primary;
+  }
+}
+
+.more-news-photo {
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+  }
+}
+
+.more-news-row {
+  padding-top: 60px;
+}
+
+.more-news {
+  padding-bottom: 100px;
+  padding-top: 20px;
+
+  &-header {
+    color: $primary;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+
+  }
+
+  &-date {
+    color: #77777e;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
